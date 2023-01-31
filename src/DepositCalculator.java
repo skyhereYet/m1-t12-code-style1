@@ -22,7 +22,7 @@ public class DepositCalculator {
     void calculate() {
         int period;
         int action;
-        double outValue = 0;
+        double sumWithPercents = 0;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите сумму вклада в рублях:");
@@ -32,10 +32,10 @@ public class DepositCalculator {
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         action = scanner.nextInt();
         if (action == 1) {
-            outValue = calculateSimplePercent(amount, 0.06, period);
+            sumWithPercents = calculateSimplePercent(amount, 0.06, period);
         } else if (action == 2) {
-            outValue = calculateComplexPercent(amount, 0.06, period);
+            sumWithPercents = calculateComplexPercent(amount, 0.06, period);
         }
-        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + outValue);
+        System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + sumWithPercents);
     }
 }
